@@ -1,0 +1,33 @@
+package com.newlecture.web;
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+@WebServlet("/notice-reg")
+public class NoticeReg extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	@Override
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html; charset = UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		PrintWriter out = response.getWriter();
+		
+		int loop = 100; // 기본값 설정
+		String loopStr = request.getParameter("loopTime");
+		// getParameter() --> 사용자가 전달하는 쿼리 스트링의 키워드를 읽을 수 있다.
+		// 사용자 입력값은 무조건 문자열로 전달된다.
+		
+		if (loopStr != null && !loopStr.equals("")) {
+			loop = Integer.parseInt(loopStr);
+		}
+		for (int i = 0; i < loop ; i++) {
+			out.println((i + 1) + "번 : " +  " Hello Servlet 안녕" + "<br>");
+		}
+	}
+}

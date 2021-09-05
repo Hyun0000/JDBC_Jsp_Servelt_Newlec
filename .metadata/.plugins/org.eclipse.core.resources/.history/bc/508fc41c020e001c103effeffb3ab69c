@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<div>
+		<form action="calcul" method = "post">
+		
+			<div>
+				<label>x항의 값을 입력하세요</label>
+				<input type="text" name = "x" placeholder="x값">
+			</div>
+			
+			<div>
+				<label>y항의 값을 입력하세요</label>
+				<input type="text" name = "y" placeholder="y값">
+			</div>
+			
+			<div>
+				<input type = "submit" name = "operator" value="+">
+				<input type = "submit" name = "operator" value="-">
+				<input type = "submit" name = "operator" value="x">
+				<input type = "submit" name = "operator" value="/">
+			</div>
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div>
+		<form action="add2" method = "post">
+		
+			<div>
+				<input type="text" name = "num" />
+				<input type="text" name = "num" />
+				<input type="text" name = "num" />
+				<input type="text" name = "num" />
+				<!--위와 같이 같은 name으로 값이 전송되면 배열의 형태로  Data가 전달된다. -->
+			</div>
+			
+			<div>
+				<input type = "submit" name = "operator" value="+">
+				<input type = "submit" name = "operator" value="-">
+			</div>
+		</form>
+	</div>
+</body>
+</html>
