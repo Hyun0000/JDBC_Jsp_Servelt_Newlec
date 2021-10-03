@@ -109,6 +109,16 @@ public class Calculator2 extends HttpServlet {
 			// 더 정확히 말하면 URL에 사용할 수 있는 형태의 문자열로만 보내야한다.
 			Cookie valueCookie = new Cookie("value", String.valueOf(v));
 			Cookie operatorCookie = new Cookie("operator", operator);
+			valueCookie.setPath("/calcul2");
+			valueCookie.setMaxAge(24*60*60);
+			// setMaxAge(expiry) --> '만료날짜'를 설정할 수 있다.
+			// ex) setMaxAge(1000) --> 1000초 후에 valueCookie가 사라진다.
+			// setMaxAge(24*60*60) --> 24시간 후에 valueCookie가 사라진다.
+			operatorCookie.setMaxAge(24*60*60);
+			operatorCookie.setPath("/calcul2");
+			// 해당 Cookie를 어느 경우에 사용자(브라우저)로부터 전달받아야 하는지 설정
+			// valueCookie.setPath("/"); --> 모든 page(서비스)를 요청할 때마다 항상 valueCookie를 가져오라는 의미
+			// valueCookie.setPath("/notice/"); --> 모든 URL에 valueCookie를 가져오는 것이 아니라 notice가 포함된 URL을 요청할 경우 해당 Cookie를 가져오라는 의미
 			
 			// cookie를 심었으니 클라이언트의 브라우저에 보낸다.
 			// response의 Header에 심어져 보내진다.
